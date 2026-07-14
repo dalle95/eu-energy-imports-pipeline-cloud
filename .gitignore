@@ -25,3 +25,10 @@ dbt_packages/
 Thumbs.db
 .vscode/
 .idea/
+
+# Terraform
+.terraform/
+/infrastructure/*.tfstate
+/infrastructure/*.tfstate.backup
+/infrastructure/.terraform.lock.hcl
+/infrastructure/keys/*.json

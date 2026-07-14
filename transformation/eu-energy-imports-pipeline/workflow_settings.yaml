@@ -1,0 +1,5 @@
+defaultProject: eu-energy-imports-pipeline
+dataformCoreVersion: 3.0.61
+defaultLocation: EU
+defaultDataset: eu_energy_staging
+defaultAssertionDataset: dataform_assertions

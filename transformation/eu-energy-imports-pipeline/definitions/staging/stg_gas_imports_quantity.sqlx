@@ -1,0 +1,16 @@
+-- definitions/staging/stg_gas_imports_quantity.sqlx
+config {
+  type: "table",
+  schema: "eu_energy_staging",
+  name: "dataset_comext_gas_imports_quantity"
+}
+
+SELECT
+  reporter,
+  partner,
+  product AS product_code,
+  TIME_PERIOD AS time_period,
+  OBS_VALUE AS quantity_100kg,
+  '100kg' AS quantity_unit
+FROM ${ref("comext_gas_imports_dataset")}
+WHERE indicators = 'QUANTITY_IN_100KG'

@@ -16,9 +16,6 @@ def update_gitignore():
             f.write("# Data directory\ndata/\n")
 
 
-import requests
-from pathlib import Path
-
 def download_file(url: str, output_path: Path):
     try:
         response = requests.get(url, timeout=30)

@@ -1,0 +1,13 @@
+-- definitions/sources/create_comext_oil_imports_dataset.sqlx
+config {
+  type: "operations",
+  hasOutput: true,
+  schema: "eu_energy_raw",
+  name: "comext_oil_imports_dataset"
+}
+
+CREATE OR REPLACE EXTERNAL TABLE ${self()}
+OPTIONS (
+  format = 'CSV',
+  uris = ['gs://eu-energy-imports-pipeline-raw-data-bucket/comext/facts/oil_imports/*.csv']
+)

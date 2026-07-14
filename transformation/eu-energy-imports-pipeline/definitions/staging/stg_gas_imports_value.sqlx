@@ -1,0 +1,15 @@
+-- definitions/staging/stg_gas_imports_value.sqlx
+config {
+  type: "table",
+  schema: "eu_energy_staging",
+  name: "dataset_comext_gas_imports_value"
+}
+
+SELECT
+  reporter,
+  partner,
+  product AS product_code,
+  TIME_PERIOD AS time_period,
+  OBS_VALUE AS value_euros
+FROM ${ref("comext_gas_imports_dataset")}
+WHERE indicators = 'VALUE_IN_EUROS'

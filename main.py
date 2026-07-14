@@ -2,8 +2,6 @@ import argparse
 import sys
 
 from ingestion.run_ingestion import run_ingestion
-from processing.run_processing import run_processing
-from transformation.run_transformation import run_transformation
 
 
 def parse_args() -> argparse.Namespace:
@@ -37,17 +35,6 @@ def main() -> int:
 
         if args.phase == "ingestion":
             run_ingestion()
-
-        elif args.phase == "processing":
-            run_processing()
-
-        elif args.phase == "transformation":
-            run_transformation(env=args.env)
-
-        elif args.phase == "all":
-            run_ingestion()
-            run_processing()
-            run_transformation()
 
         print("Pipeline completed successfully")
         return 0
